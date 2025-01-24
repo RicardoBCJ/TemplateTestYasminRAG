@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.app-container {
+  @apply min-h-screen bg-gray-100 py-8;
+}
+
+.upload-section {
+  @apply bg-white rounded-lg shadow-lg p-6 mb-6 max-w-4xl mx-auto;
+}
+
+.chat-section {
+  @apply bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto;
+}
+
+.message-bubble {
+  @apply mb-4 max-w-[80%] rounded-lg px-4 py-2;
+}
+
+.user-message {
+  @apply bg-blue-500 text-white ml-auto;
+}
+
+.assistant-message {
+  @apply bg-gray-200;
+}
+
+.error-message {
+  @apply bg-red-100 text-red-700 mx-auto;
+}
+
+.chat-container {
+  @apply bg-gray-50 rounded-lg p-4 h-96 overflow-y-auto mb-4;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.chat-container::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+.chat-input {
+  @apply flex gap-2 mt-4;
+}
+
+.input-field {
+  @apply flex-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.send-button {
+  @apply px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors;
+}
+
+.file-input {
+  @apply block w-full text-sm text-gray-500;
+}
+
+.file-input::file-selector-button {
+  @apply mr-4 py-2 px-4 rounded-md border-0 text-sm font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100;
+}
+
+.status-section {
+  @apply mt-4 p-4 bg-gray-50 rounded-md;
+}
+
+.pre-wrap {
+  @apply whitespace-pre-wrap break-words text-sm;
+}
