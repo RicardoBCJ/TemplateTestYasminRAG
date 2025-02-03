@@ -76,3 +76,19 @@
 .pre-wrap {
   @apply whitespace-pre-wrap break-words text-sm;
 }
+
+
+body {
+  @apply transition-colors duration-200;
+}
+
+/* Add to your main CSS file */
+.dark {
+  --sidebar-bg: theme('colors.gray.800');
+  --border-color: theme('colors.gray.700');
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+}
