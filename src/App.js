@@ -123,7 +123,7 @@ const RAGInterface = () => {
     } catch (error) {
       setState(prev => ({
         ...prev,
-        errorMessage: `Upload falhou: ${error.message}`,  // Show actual error message
+        errorMessage: `Upload falhou: ${error.message}`,
         uploadStatus: 'Erro no upload'
       }));
     } finally {
@@ -240,6 +240,7 @@ const RAGInterface = () => {
             >
               <option value="">Selecione o Tipo de Documento</option>
               <option value="DUT">Diretrizes DUT</option>
+              <option value="DUT_MANUAL">Manual de Interpretação DUT</option>
               <option value="REPORT">Relatórios de Exemplo</option>
               <option value="OTHER">Outros Documentos</option>
             </select>
@@ -339,8 +340,7 @@ const RAGInterface = () => {
                         </div>
                         <button
                           onClick={() => handleDeleteDocument(doc.id)}
-                          className={`hover:text-red-500 transition-colors ${state.darkMode ? 'text-gray-300' : 'text-gray-600'
-                            }`}
+                          className={`hover:text-red-500 transition-colors ${state.darkMode ? 'text-gray-300' : 'text-gray-600'}`}
                         >
                           <Trash2 size={16} />
                         </button>
@@ -364,8 +364,7 @@ const RAGInterface = () => {
             <select
               value={state.chatMode}
               onChange={(e) => setState(prev => ({ ...prev, chatMode: e.target.value }))}
-              className={`p-2 rounded-md ${state.darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'
-                }`}
+              className={`p-2 rounded-md ${state.darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
             >
               <option value="dut">DUT Apenas</option>
               <option value="full">DUT + Outros Documentos</option>
@@ -373,15 +372,12 @@ const RAGInterface = () => {
           </div>
 
           {/* Chat History */}
-          <div className={`rounded-lg p-4 mb-4 h-96 overflow-y-auto ${state.darkMode ? 'bg-gray-700' : 'bg-gray-50'
-            }`}>
+          <div className={`rounded-lg p-4 mb-4 h-96 overflow-y-auto ${state.darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
             {chat.history.map((item, index) => (
               <div key={index} className="mb-4 last:mb-0">
-                <div className={`p-3 rounded-lg ${state.darkMode ? 'bg-gray-600' : 'bg-white shadow-sm'
-                  }`}>
+                <div className={`p-3 rounded-lg ${state.darkMode ? 'bg-gray-600' : 'bg-white shadow-sm'}`}>
                   <p className="font-semibold text-blue-400">Q: {item.question}</p>
-                  <div className={`mt-2 p-2 rounded ${state.darkMode ? 'bg-gray-500/20' : 'bg-blue-50'
-                    }`}>
+                  <div className={`mt-2 p-2 rounded ${state.darkMode ? 'bg-gray-500/20' : 'bg-blue-50'}`}>
                     <p className="whitespace-pre-wrap">A: {item.answer}</p>
                   </div>
                 </div>
@@ -399,12 +395,12 @@ const RAGInterface = () => {
             <textarea
               value={chat.input}
               onChange={(e) => {
-                const rows = Math.min(Math.max(e.target.value.split('\n').length, 1), 5)
+                const rows = Math.min(Math.max(e.target.value.split('\n').length, 1), 5);
                 setChat(prev => ({
                   ...prev,
                   input: e.target.value,
                   textareaRows: rows
-                }))
+                }));
               }}
               rows={chat.textareaRows}
               placeholder="Digite sua pergunta..."
@@ -431,3 +427,4 @@ const RAGInterface = () => {
 };
 
 export default RAGInterface;
+
